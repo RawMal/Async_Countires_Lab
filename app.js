@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded",()=>{
         console.log(totalPopulation);
         population.textContent = "Total Population = " + totalPopulation;
 
+        
+
         const button = document.querySelector("button");
         button.addEventListener("click", fetchCountries);
     }
