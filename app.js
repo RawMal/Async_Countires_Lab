@@ -32,7 +32,10 @@ document.addEventListener("DOMContentLoaded",()=>{
 
         const totalPopulation = jsonData.reduce((reducer, country)=> reducer + country.population, 0)
         console.log(totalPopulation);
-        population.textContent = "Total Population = " + totalPopulation
+        population.textContent = "Total Population = " + totalPopulation;
+
+        const button = document.querySelector("button");
+        button.addEventListener("click", fetchCountries);
     }
     fetchCountries();
 })
