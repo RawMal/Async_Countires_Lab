@@ -2,15 +2,18 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     
 
-    const fetchCountries = async ()=>{
+    const fetchCountries = async () => {
         
         const list = document.querySelector("#countries");
         const population = document.querySelector("h2");
+        const button = document.querySelector("button");
 
 
         const response = await fetch("https://restcountries.com/v3.1/all")
         const jsonData = await response.json();
         const countryNames =[];
+
+        button.addEventListener("click", fetchCountries);
         
         jsonData.forEach((country)=>countryNames.push(country.name))
         const countryOfficialName = countryNames.map((name_array)=>name_array.official)
@@ -36,8 +39,8 @@ document.addEventListener("DOMContentLoaded",()=>{
 
         
 
-        const button = document.querySelector("button");
-        button.addEventListener("click", fetchCountries);
+        
+        
     }
     fetchCountries();
 })
